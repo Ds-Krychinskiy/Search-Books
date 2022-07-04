@@ -8,3 +8,5 @@ export const Title = styled.h3`
 `;
 
 export const Categories = styled.h3``;
+
+export const ResultSeach = styled.h3``;

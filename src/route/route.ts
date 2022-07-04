@@ -1,5 +1,5 @@
-import PageListProduct from "./component/pages/page_list_product";
-import PageOneProduct from "./component/pages/page_one_product";
+import PageListProduct from "../component/pages/page_list_product";
+import PageOneProduct from "../component/pages/page_one_product";
 import { Home, ProductPage } from "./consts";
 
 export const ComponentRoutes = [
@@ -8,7 +8,7 @@ export const ComponentRoutes = [
     Component: PageListProduct,
   },
   {
-    path: ProductPage,
+    path: ProductPage + ":id",
     Component: PageOneProduct,
   },
 ];

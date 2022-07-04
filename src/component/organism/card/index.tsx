@@ -1,22 +1,39 @@
+import { DefaulState } from "../../../redux/type/list_product";
+import Loader from "../../atoms/loader";
 import TypographyComponent from "../../atoms/typography";
+import { CardStyleWrapp, ListProductWrapp } from "./style";
 
 interface CardComponentProps {
-  title: string;
-  authors: string[];
-  categories: string[];
-  onClick: () => void;
+  product: DefaulState[];
+  loading: boolean;
+  GoToProductPage: (id: string) => void
 }
 
-const CardComponent: React.FC<CardComponentProps> = ({
-  title,
-  authors,
-  categories,
-  onClick,
-}) => {
+const CardComponent: React.FC<CardComponentProps> = ({ product, loading, GoToProductPage }) => {
   return (
-    <div onClick={onClick}>
-      <TypographyComponent variant={"title"}>{title}</TypographyComponent>
-    </div>
+    <ListProductWrapp>
+      {loading ? (
+        <Loader />
+      ) : (
+        product.map((el) => (
+          <CardStyleWrapp
+            onClick={() => GoToProductPage(el.id)}
+            key={el.volumeInfo.title}
+          >
+            <img src={`${el.volumeInfo.imageLinks.smallThumbnail}`} alt="Something went wrong"/>
+            <TypographyComponent variant={"title"}>
+              {el.volumeInfo.categories}
+            </TypographyComponent>
+            <TypographyComponent variant={"title"}>
+              {el.volumeInfo.title}
+            </TypographyComponent>
+            <TypographyComponent variant={"title"}>
+              {el.volumeInfo.authors}
+            </TypographyComponent>
+          </CardStyleWrapp>
+        ))
+      )}
+    </ListProductWrapp>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { InputStyle } from "./style";
 
 interface InputComponentProps {
   placeholder: string;
@@ -12,7 +13,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
   setValue,
 }) => {
   return (
-    <input
+    <InputStyle
       value={value}
       onChange={(e) => setValue(e.target.value)}
       placeholder={placeholder}

@@ -20,6 +20,7 @@ const InputSearchMolecule: React.FC<InputSearchMoleculeProps> = ({
         placeholder={"Введите название книги..."}
       />
       <ButtonComponent
+        variant={"search"}
         children={"Search..."}
         onClick={() => fetchListProductByIntitle(value)}
       />

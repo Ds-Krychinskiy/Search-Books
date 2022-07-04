@@ -1,8 +1,8 @@
 import { useState } from "react";
 import HeaderComponent from "./component/organism/header";
 import { useAction } from "./redux/hooks/useAction";
-import { ComponentRoutes } from "./route";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ComponentRoutes } from "./route/route";
 
 const App = () => {
   const { fetchListProductByIntitle } = useAction();

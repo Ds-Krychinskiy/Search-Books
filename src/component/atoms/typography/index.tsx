@@ -1,9 +1,9 @@
 import React from "react";
-import { Authors, Label, Title } from "./style";
+import { Authors, Label, ResultSeach, Title } from "./style";
 
 interface TypographyComponentProps {
   variant: string;
-  children: string | number;
+  children: string | number | string[];
 }
 const TypographyComponent: React.FC<TypographyComponentProps> = ({
   variant,
@@ -16,6 +16,8 @@ const TypographyComponent: React.FC<TypographyComponentProps> = ({
       return <Authors>{children}</Authors>;
     case "title":
       return <Title>{children}</Title>;
+    case "resultSeach":
+      return <ResultSeach>{children}</ResultSeach>;
     default:
       return <h2>{children}</h2>;
   }

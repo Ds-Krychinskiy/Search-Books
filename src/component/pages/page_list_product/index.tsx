@@ -7,7 +7,6 @@ const PageListProduct = ({}) => {
     (state) => state.listProduct
   );
   const { fetchOneProduct } = useAction();
-
   return (
     <TemplateListProduct
       product={product}
