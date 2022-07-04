@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import HeaderComponent from "./component/organism/header";
+import { useAction } from "./redux/hooks/useAction";
+import { ComponentRoutes } from "./route";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-function App() {
+const App = () => {
+  const { fetchListProductByIntitle } = useAction();
+  const [value, setValue] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <HeaderComponent
+        value={value}
+        setValue={setValue}
+        fetchListProductByIntitle={fetchListProductByIntitle}
+      />
+
+      {ComponentRoutes.map(({ Component, path }) => (
+        <Routes key={path}>
+          <Route path={`/${path}`} element={<Component />} />
+        </Routes>
+      ))}
+    </Router>
   );
-}
+};
 
 export default App;
