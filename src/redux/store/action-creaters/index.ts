@@ -1,6 +1,6 @@
-import * as ProductActionCreater from "./list_product";
-import * as OneProductActionCreater from "./one_product";
+import * as ProductActionCreater from "./listProducts";
+import * as SelectProductActionCreater from "./selectProduct";
 export default {
   ...ProductActionCreater,
-  ...OneProductActionCreater,
+  ...SelectProductActionCreater,
 };

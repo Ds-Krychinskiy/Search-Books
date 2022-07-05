@@ -1,32 +1,35 @@
-import { DefaulState } from "../../../redux/type/list_product";
+import { DefaulState } from "../../../redux/type/listProducts";
 import ButtonComponent from "../../atoms/button";
 import TypographyComponent from "../../atoms/typography";
-import CardComponent from "../../organism/card";
+import CardComponent from "../../organism/cards";
 import { HeaderResultSearch } from "./style";
 import { useNavigate } from "react-router-dom";
-import { ProductPage } from "../../../route/consts";
 
 interface TemplateListProductProps {
-  product: DefaulState[];
+  products: DefaulState[];
   loading: boolean;
+  error: null | string;
   fetchOneProduct: (id: string) => void;
+  fetchLoadMoreProduct: () => void;
 }
 
 const TemplateListProduct: React.FC<TemplateListProductProps> = ({
-  product,
+  products,
   loading,
+  error,
   fetchOneProduct,
+  fetchLoadMoreProduct,
 }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const GoToProductPage = (id: string ) => {
+  const GoToProductPage = (id: string) => {
     fetchOneProduct(id);
-    navigate(`/${id}`);
+    navigate(`${id}`);
   };
 
   const countFountResults =
-    product.length > 0
-      ? `Found ${product.length} results`
+    products.length > 0
+      ? `Found ${products.length} results`
       : "Результат поиска пуст..";
 
   return (
@@ -36,11 +39,20 @@ const TemplateListProduct: React.FC<TemplateListProductProps> = ({
           {countFountResults}
         </TypographyComponent>
       </HeaderResultSearch>
-      <CardComponent product={product} loading={loading} GoToProductPage={GoToProductPage}/>
+      {error ? (
+        error
+      ) : (
+        <CardComponent
+          products={products}
+          loading={loading}
+          GoToProductPage={GoToProductPage}
+        />
+      )}
+
       <ButtonComponent
         variant={"moreProducts"}
-        onClick={() => console.log()}
-        children={"Ещё..."}
+        onClick={() => fetchLoadMoreProduct()}
+        children={"Load more.."}
       />
     </>
   );

@@ -3,26 +3,26 @@ import InputComponent from "../../atoms/input";
 import { InputMoleculeSearchWrapp } from "./style";
 
 interface InputSearchMoleculeProps {
-  value: string;
-  fetchListProductByIntitle: (value: string) => void;
-  setValue: (value: string) => void;
+  valueInput: string;
+  fetchListProductByIntitle: () => void;
+  onChange: (value: string) => void;
 }
 const InputSearchMolecule: React.FC<InputSearchMoleculeProps> = ({
   fetchListProductByIntitle,
-  setValue,
-  value,
+  onChange,
+  valueInput,
 }) => {
   return (
     <InputMoleculeSearchWrapp>
       <InputComponent
-        value={value}
-        setValue={setValue}
+        valueInput={valueInput}
+        onChange={onChange}
         placeholder={"Введите название книги..."}
       />
       <ButtonComponent
         variant={"search"}
         children={"Search..."}
-        onClick={() => fetchListProductByIntitle(value)}
+        onClick={() => fetchListProductByIntitle()}
       />
     </InputMoleculeSearchWrapp>
   );

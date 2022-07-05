@@ -1,16 +1,15 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const InputStyle = styled.input`
-max-width: 500px;
-width: 100%;
-max-height: 50px;
-height: 100%;
-border-radius: 20px;
-border: none;
-padding-left: 20px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  border-radius: 20px 0px 0px 20px;
+  border: none;
+  padding-left: 20px;
 
-::placeholder{
+  ::placeholder {
     font-size: 16px;
-}
-
-`
+  }
+`;

@@ -3,19 +3,19 @@ import { InputStyle } from "./style";
 
 interface InputComponentProps {
   placeholder: string;
-  value: string;
-  setValue: (name: string) => void;
+  valueInput: string;
+  onChange: (name: string) => any;
 }
 
 const InputComponent: React.FC<InputComponentProps> = ({
   placeholder,
-  value,
-  setValue,
+  valueInput,
+  onChange,
 }) => {
   return (
     <InputStyle
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
+      value={valueInput}
+      onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
     />
   );

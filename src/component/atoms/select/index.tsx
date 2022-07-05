@@ -1,14 +1,18 @@
+import { OptionStyle, SelectStyle } from "./style";
+
 interface SelectComponentProps {
   list: string[];
 }
 
 const SelectComponent: React.FC<SelectComponentProps> = ({ list }) => {
   return (
-    <select>
+    <SelectStyle>
       {list.map((el) => (
-        <option key={el}>{el}</option>
+        <OptionStyle value={el} key={el}>
+          {el}
+        </OptionStyle>
       ))}
-    </select>
+    </SelectStyle>
   );
 };
 

@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-export const InputMoleculeSearchWrapp = styled.div`
-  width: 100%;
-  max-height: 50px;
-  height: 100%;
+export const SelectProductWrapp = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 60vh;
 `;

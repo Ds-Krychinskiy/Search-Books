@@ -1,6 +1,5 @@
 export type DefaulState = {
   selfLink: string;
-  id: string;
   volumeInfo: {
     title: string;
     authors: string[];
@@ -13,19 +12,16 @@ export type DefaulState = {
       thumbnail: string;
     };
   };
-  searchInfo: {
-    textSnippet: string;
-  };
 };
 
-export interface ProductState {
-  product: DefaulState[];
+export interface SelectProductState {
+  selectProduct: DefaulState[];
   loading: boolean;
   error: null | string;
 }
 
-export enum ProductActionType {
-  GET_PRODUCT = "GET_PRODUCT",
-  GET_PRODUCT_SUCCESS = "GET_PRODUCT_SUCCESS",
-  ERROR_ON_REQUEST = "ERROR_ON_REQUEST",
+export enum SelectProductActionType {
+  GET_PRODUCT = "SELECTED_GET_PRODUCT",
+  GET_PRODUCT_SUCCESS = "SELECTED_GET_PRODUCT_SUCCESS",
+  ERROR_ON_REQUEST = "SELECTED_ERROR_ON_REQUEST",
 }

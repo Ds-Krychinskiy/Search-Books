@@ -10,3 +10,7 @@ export const HeaderWrapper = styled.div`
   background: url(https://mipt.ru/upload/medialibrary/907/111.jpg);
   background-size: cover;
 `;
+
+export const SelectWrapp = styled.div`
+  display: flex;
+`;

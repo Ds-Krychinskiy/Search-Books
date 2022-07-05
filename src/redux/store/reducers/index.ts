@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import { ListProductReducer } from "./list_product";
-import { OneProductReducer } from "./one_product";
+import { ListProductReducer } from "./listProducts";
+import { SelectProductReducer } from "./selectProduct";
 
 export const rootReducer = combineReducers({
   listProduct: ListProductReducer,
-  oneProduct: OneProductReducer,
+  selectProduct: SelectProductReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

@@ -1,20 +1,17 @@
 import React from "react";
-import { SelectMenuProps } from "../../../list";
 import SelectComponent from "../../atoms/select";
+import TypographyComponent from "../../atoms/typography";
 import { SelectMoleculeWrapp } from "./style";
 
 interface SelectMoleculeProps {
-  state: SelectMenuProps[];
+  state: string[];
+  label: string;
 }
-const SelectMolecule: React.FC<SelectMoleculeProps> = ({ state }) => {
+const SelectMolecule: React.FC<SelectMoleculeProps> = ({ state, label }) => {
   return (
     <SelectMoleculeWrapp>
-      {state.map((el) => (
-        <React.Fragment key={el.name}>
-          {el.name}
-          <SelectComponent list={el.list}></SelectComponent>
-        </React.Fragment>
-      ))}
+      <TypographyComponent variant={"title"} children={label} />
+      <SelectComponent list={state} />
     </SelectMoleculeWrapp>
   );
 };
