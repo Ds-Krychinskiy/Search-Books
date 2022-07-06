@@ -23,6 +23,7 @@ export interface ProductState {
   maxResults: number;
   startIndex: number;
   orderBy: string;
+  subject: string;
   products: DefaulState[];
   loading: boolean;
   error: null | string;
@@ -30,6 +31,8 @@ export interface ProductState {
 
 export enum ProductsActionType {
   GET_VALUE_FROM_INPUT = "GET_VALUE_FROM_INPUT",
+  GET_SUBJECT = "GET_SUBJECT",
+  GET_ORDERBY = "GET_ORDERBY",
   GET_PRODUCT = "GET_PRODUCT",
   GET_PRODUCT_SUCCESS = "GET_PRODUCT_SUCCESS",
   GET_LOAD_MORE_PRODUCT = "GET_LOAD_MORE_PRODUCT",

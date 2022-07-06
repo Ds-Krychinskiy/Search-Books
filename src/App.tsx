@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 const App = () => {
   const dispatch = useDispatch();
 
-  const { fetchListProductByIntitle, fetchValueFromInput } = useAction();
+  const { fetchListProductByIntitle, fetchValueFromInput,fetchOrderBy, fetchSubject } = useAction();
   const { valueInput } = useTypedSelector((state) => state.listProduct);
 
   const onChange = (e: string) => {
@@ -20,6 +20,8 @@ const App = () => {
       <HeaderComponent
         valueInput={valueInput}
         onChange={onChange}
+        fetchOrderBy={fetchOrderBy}
+        fetchSubject={fetchSubject}
         fetchListProductByIntitle={fetchListProductByIntitle}
       />
       {ComponentRoutes.map(({ Component, path }) => (

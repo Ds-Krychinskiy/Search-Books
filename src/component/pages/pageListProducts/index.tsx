@@ -6,6 +6,7 @@ const PageListProduct = ({}) => {
   const { products, loading, error } = useTypedSelector(
     (state) => state.listProduct
   );
+  console.log(products)
   const { fetchOneProduct, fetchLoadMoreProduct } = useAction();
   return (
     <TemplateListProduct

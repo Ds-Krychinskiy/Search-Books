@@ -1,3 +1,4 @@
+import { BaseSyntheticEvent } from "react";
 import ButtonComponent from "../../atoms/button";
 import InputComponent from "../../atoms/input";
 import { InputMoleculeSearchWrapp } from "./style";
@@ -12,8 +13,12 @@ const InputSearchMolecule: React.FC<InputSearchMoleculeProps> = ({
   onChange,
   valueInput,
 }) => {
+  const onFormSubmit = (e: BaseSyntheticEvent) => {
+    e.preventDefault();
+    fetchListProductByIntitle();
+  };
   return (
-    <InputMoleculeSearchWrapp>
+    <InputMoleculeSearchWrapp onSubmit={onFormSubmit}>
       <InputComponent
         valueInput={valueInput}
         onChange={onChange}
@@ -21,8 +26,8 @@ const InputSearchMolecule: React.FC<InputSearchMoleculeProps> = ({
       />
       <ButtonComponent
         variant={"search"}
+        type={"submit"}
         children={"Search..."}
-        onClick={() => fetchListProductByIntitle()}
       />
     </InputMoleculeSearchWrapp>
   );

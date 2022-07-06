@@ -13,4 +13,12 @@ export const HeaderWrapper = styled.div`
 
 export const SelectWrapp = styled.div`
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  height: 50px;
+  @media (max-width: 540px) {
+    flex-direction: column;
+  }
 `;

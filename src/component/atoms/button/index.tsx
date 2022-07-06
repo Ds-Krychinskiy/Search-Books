@@ -2,18 +2,20 @@ import { ButtonSearch, MoreProducts } from "./style";
 
 interface ButtonComponentProps {
   children: string;
-  onClick: () => void;
+  onClick?: () => void;
   variant: string;
 }
 
-const ButtonComponent: React.FC<ButtonComponentProps> = ({
-  children,
-  onClick,
-  variant,
-}) => {
+const ButtonComponent: React.FC<
+  ButtonComponentProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ children, onClick, variant, type }) => {
   switch (variant) {
     case "search":
-      return <ButtonSearch onClick={onClick}>{children}</ButtonSearch>;
+      return (
+        <ButtonSearch type={type} onClick={onClick}>
+          {children}
+        </ButtonSearch>
+      );
     case "moreProducts":
       return <MoreProducts onClick={onClick}>{children}</MoreProducts>;
     default:

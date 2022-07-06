@@ -2,11 +2,12 @@ import { OptionStyle, SelectStyle } from "./style";
 
 interface SelectComponentProps {
   list: string[];
+  onChange: (value: string) => void;
 }
 
-const SelectComponent: React.FC<SelectComponentProps> = ({ list }) => {
+const SelectComponent: React.FC<SelectComponentProps> = ({ list, onChange }) => {
   return (
-    <SelectStyle>
+    <SelectStyle onChange={(e)=> onChange(e.target.value)}>
       {list.map((el) => (
         <OptionStyle value={el} key={el}>
           {el}

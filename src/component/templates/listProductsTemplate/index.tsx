@@ -45,15 +45,12 @@ const TemplateListProduct: React.FC<TemplateListProductProps> = ({
         <CardComponent
           products={products}
           loading={loading}
+          fetchLoadMoreProduct={fetchLoadMoreProduct}
           GoToProductPage={GoToProductPage}
         />
       )}
 
-      <ButtonComponent
-        variant={"moreProducts"}
-        onClick={() => fetchLoadMoreProduct()}
-        children={"Load more.."}
-      />
+      
     </>
   );
 };

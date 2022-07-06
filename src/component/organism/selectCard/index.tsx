@@ -31,7 +31,7 @@ const SelectCard: React.FC<SelectCardProps> = ({ selectProduct, loading }) => {
                 {el.volumeInfo.authors}
               </TypographyComponent>
               <TypographyComponent variant={"title"}>
-                {el.volumeInfo.categories[0]}
+                {el.volumeInfo.categories}
               </TypographyComponent>
             </ImageWrapp>
             <DirectionWrapp>

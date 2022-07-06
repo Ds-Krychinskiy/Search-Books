@@ -8,6 +8,10 @@ export const SelectCardStyle = styled.div`
   width: 100%;
   max-height: 1000px;
   height: 100%;
+  @media (max-width: 800px) {
+    padding-top: 30px;
+    flex-direction: column;
+  }
 `;
 export const DirectionWrapp = styled.div`
   margin-left: 50px;

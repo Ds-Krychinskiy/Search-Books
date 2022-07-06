@@ -3,8 +3,17 @@ import styled from "styled-components";
 export const ListProductWrapp = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 100vh;
   padding: 20px;
+  position: relative;
+  @media(max-width: 840px){
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media(max-width: 630px){
+  grid-template-columns: 1fr 1fr ;
+  }
+  @media(max-width: 380px){
+  grid-template-columns: 1fr ;
+  }
 `;
 
 export const CardStyleWrapp = styled.div`

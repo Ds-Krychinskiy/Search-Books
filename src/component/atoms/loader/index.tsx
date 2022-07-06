@@ -1,10 +1,8 @@
-import { FonLoader, LoaderStyle } from "./style";
+import {  LoaderStyle } from "./style";
 
 const Loader = () => {
   return (
-    <FonLoader>
       <LoaderStyle />
-    </FonLoader>
   );
 };
 

@@ -7,11 +7,14 @@ interface HeaderComponentProps {
   valueInput: string;
   onChange: (value: string) => void;
   fetchListProductByIntitle: () => void;
+  fetchSubject: (value: string) => void;
+  fetchOrderBy: (value: string) => void;
 }
 
 const HeaderComponent: React.FC<HeaderComponentProps> = ({
   valueInput,
   onChange,
+  fetchOrderBy,fetchSubject,
   fetchListProductByIntitle,
 }) => {
   const category: string[] = [
@@ -34,8 +37,8 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({
         fetchListProductByIntitle={fetchListProductByIntitle}
       />
       <SelectWrapp>
-        <SelectMolecule label={"Category"} state={category} />
-        <SelectMolecule label={"Sorting by"} state={sort} />
+        <SelectMolecule label={"Category"} state={category} onChange={fetchSubject}/>
+        <SelectMolecule label={"Sorting by"} state={sort} onChange={fetchOrderBy}/>
       </SelectWrapp>
     </HeaderWrapper>
   );

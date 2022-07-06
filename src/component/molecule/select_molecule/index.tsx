@@ -6,13 +6,14 @@ import { SelectMoleculeWrapp } from "./style";
 interface SelectMoleculeProps {
   state: string[];
   label: string;
+  onChange: (value: string) => void;
 }
-const SelectMolecule: React.FC<SelectMoleculeProps> = ({ state, label }) => {
+const SelectMolecule: React.FC<SelectMoleculeProps> = ({ state, label, onChange }) => {
   return (
-    <SelectMoleculeWrapp>
+    <>
       <TypographyComponent variant={"title"} children={label} />
-      <SelectComponent list={state} />
-    </SelectMoleculeWrapp>
+      <SelectComponent list={state}  onChange={onChange}/>
+    </>
   );
 };
 
